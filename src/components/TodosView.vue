@@ -3,7 +3,7 @@
   <div
     class="w-full h-screen overflow-scroll flex flex-col justify-between bg-gray-200"
   >
-    <nav class="flex justify-between items-center px-10 pt-5">
+    <nav class="flex justify-between items-center px-5 md:px-10 pt-5">
       <div>
         <h1 class="text-2xl font-bold">Tablero Kanban</h1>
       </div>
@@ -12,11 +12,11 @@
     <!-- Mensaje de no hay tableros -->
     <div
       v-if="boards.length === 0"
-      class="flex justify-center items-center h-full rounded-md"
+      class="flex justify-center items-center h-full"
     >
       <div class="flex flex-col items-center">
         <p class="text-3xl font-bold mb-4">No hay tableros</p>
-        <p class="text-lg mb-4">
+        <p class="text-lg mb-4 ml-8 ">
           ¡Crea un nuevo tablero para comenzar a organizar tus tareas!
         </p>
         <button
@@ -29,10 +29,12 @@
     </div>
 
     <!-- Tableros -->
-    <div>
-      <div class="flex gap-10 p-8">
+    <div class="flex flex-col gap-10 p-5 md:p-8">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+      >
         <div
-          class="flex flex-col items-center gap-5 w-72 h-96 p-5 rounded-md shadow-lg bg-slate-50"
+          class="flex flex-col items-center gap-5 w-full h-auto sm:h-80 p-5 rounded-md shadow-lg bg-slate-50"
           @drop="onDrop($event, board)"
           @dragover.prevent
           @dragenter.prevent
@@ -41,7 +43,7 @@
         >
           <!-- Titulo Tablero -->
           <div class="flex justify-between items-center w-full">
-            <div class="text-2xl font-semibold">
+            <div class="text-xl font-semibold">
               {{ board.name }}
             </div>
             <!-- Boton para eliminar tablero -->
@@ -56,7 +58,7 @@
           <InputNew @on-new-item="(text) => handleNewItem(text, board)" />
           <!-- Tareas -->
           <div
-            class="text-md bg-slate-200 flex justify-between py-2 px-5 w-52 rounded-lg"
+            class="text-md bg-slate-200 flex justify-between py-2 px-5 w-full rounded-lg"
             draggable="true"
             @dragstart="startDrag($event, board, item)"
             v-for="item in board.items"
@@ -73,11 +75,11 @@
     </div>
     <!-- Agregar tablero -->
     <div
-      class="flex justify-end items-center pr-5 pb-5"
+      class="absolute bottom-10 right-0 items-center pr-5"
       v-if="boards.length > 0"
     >
       <button
-        class="bg-green-500 hover:bg-green-600 text-white font-bold text-xl rounded-full py-2 px-3 shadow-md transition-all duration-300"
+        class="relative bg-green-500 hover:bg-green-600 text-white font-bold text-xl rounded-full py-2 px-3 shadow-md transition-all duration-300"
         @click.prevent="handleNewBoard"
       >
         <font-awesome-icon :icon="faPlus" />
