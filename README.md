@@ -1,29 +1,20 @@
-# tablero-kanban
+# Tablero Kanban
 
-This template should help get you started developing with Vue 3 in Vite.
+El proyecto consiste en un tablero Kanban creado con Vue Js y Tailwind css. Es completamente responsive y permite a los usuarios crear distintos tableros con tareas que pueden moverse entre las diferentes secciones del tablero y eliminarse, tanto las tareas como los tableros.
 
-## Recommended IDE Setup
+## Configuración IDE recomendada
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Configuración del proyecto
 
 ```sh
 npm install
 ```
+## Desktop
 
-### Compile and Hot-Reload for Development
+[![desktop-kanban.png](https://i.postimg.cc/VLmnmHRM/desktop-kanban.png)](https://postimg.cc/4n2m1PjN)
 
-```sh
-npm run dev
-```
+## Mobile
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+[![mobile-kanban.png](https://i.postimg.cc/wjDCLMNn/mobile-kanban.png)](https://postimg.cc/BjQ7GqMC)
