@@ -75,7 +75,7 @@
     </div>
     <!-- Agregar tablero -->
     <div
-      class="absolute bottom-10 right-0 items-center pr-5"
+      class="absolute bottom-10 right-5 items-center pr-5"
       v-if="boards.length > 0"
     >
       <button
